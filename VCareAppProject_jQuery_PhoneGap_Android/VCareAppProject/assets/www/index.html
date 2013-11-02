@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TechJAM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link href="css/codiqa.ext.css" rel="stylesheet">
+  <link href="css/jquery.mobile-1.3.1.css" rel="stylesheet">
+  <link href="css/techjam.css" rel="stylesheet">
+
+  <script src="js/jquery-1.9.1.js"></script>
+  <script src="js/techjam.js"></script>
+  
+  <script>
+	//reset type=date inputs to text
+	$( document ).bind( "mobileinit", function(){
+	$.mobile.page.prototype.options.degradeInputs.date = true;
+	$.ajax({ 
+	  type: "GET",
+	  contentType : "application/jsonp; charset=utf-8",
+	  dataType: "jsonp",
+	  url: "http://137.116.81.48:8080/MemberProfileServices/webresources/ReminderServices?callback=processData",	  
+	  success: function(data){
+	  }
+	});
+	});	
+	function processData(data){
+	     alert(data.Type+" IS DUE ON "+data.DateTime + " AT " + data.Location);
+	}
+	</script>
+  
+  
+  <script src="js/jquery.mobile-1.3.1.js"></script>
+  <script>
+		//reset type=date inputs to text
+		$( document ).bind( "mobileinit", function(){
+			$.mobile.page.prototype.options.degradeInputs.date = true;
+			
+		});	
+	</script>
+  <script src="js/jQuery.ui.datepicker.js"></script>
+  <script src="js/jquery.ui.datepicker.mobile.js"></script>
+  
+  
+</head>
+<body>
+<script type="text/javascript">
+document.addEventListener("deviceready",deviceIsReady, false);
+
+     function deviceIsReady()
+     {
+    //document.getElementById("save").addEventListener("click",addContact, false);
+    alert("READY!");
+      }
+</script>
+  <div data-role="page" data-control-title="Home" data-theme="g" id="loginPage"
+  class="stretch-content" data-theme="d">
+      <div data-role="content">
+          <div style="text-align:center" data-controltype="image" >
+              <img style="width: 288px; height: px" src="img/main_logo.png">
+          </div>
+          <div data-controltype="textinput">
+              <input data-theme="a" name="" id="uid" placeholder="Enter User ID" value="" type="text" data-mini="true">
+          </div>
+          <div data-controltype="textinput">
+              <input name="" data-theme="a" id="passwd" placeholder="Enter Password" value="" type="password"
+              data-mini="true">
+          </div>
+          <a id="loginBtn" data-role="button" data-theme="e" href="#homePage" data-icon="check"
+          data-iconpos="left">
+              Sign In
+          </a>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="dshBoard" id="homePage" data-theme="d">
+      <div data-theme="b" data-role="header">
+          <h4>
+              V CARE
+          </h4>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">gear</a>
+      </div>
+      <div data-role="content">
+          <a id="myCalendar" href="#page6" data-controltype="image">
+              <div style="display: inline;padding:2%;padding-bottom:3%;">
+                  <img style="width: 28%; height: 90px" src="img/MyCalender.jpg">
+              </div>
+          </a>
+          <a href="#page7" data-controltype="image">
+              <div style="display: inline; padding:2%;padding-bottom:3%;">
+                 <img style="float:center; width: 28%; height: 90px" src="img/Medical.jpg" alt="image" data-controltype="image">
+              </div>
+          </a>
+          <a href="#page11" data-controltype="image">
+              <div style="display: inline;padding:2%;padding-bottom:3%;">
+                 <img style="float:right; width: 28%; height: 90px" src="img/RXRefill.jpg" alt="image" data-controltype="image">
+              </div>
+          </a>
+          <br>
+          <br>
+          <br>
+          <a href="#page12" data-controltype="image">
+              <div style="display: inline;padding:2%;padding-bottom:3%;">
+                 <img style="float:left; width: 28%; height: 90px" src="img/Lab_Results.jpg" alt="image" data-controltype="image">
+              </div>
+          </a>
+          <a href="#page3" data-controltype="image">
+              <div style="display: inline;padding:2%;padding-bottom:3%;">
+                 <img style="float:center; width: 26%; height: 90px" src="img/Profile.jpg" alt="image" data-controltype="image">
+              </div>
+          </a>
+          <a href="#" data-controltype="image">
+              <div style="display: inline;padding:2%;padding-bottom:3%;">
+                 <img style="float:right; width: 28%; height: 90px" src="img/Emergency.jpg" alt="image" data-controltype="image">
+              </div>
+          </a>
+          <br>
+          <br>
+          <br>
+          <a href="#page13" data-controltype="image">
+              <div style="display: inline;padding:2%;padding-bottom:3%;">
+                 <img style="float:left; width: 28%; height: 90px" src="img/Recovery_Plan.jpg" alt="image" data-controltype="image">
+              </div>
+          </a>
+          <a href="#" data-controltype="image">
+              <div style="display: inline;padding:2%;padding-bottom:3%;">
+                 <img style="float:center; width: 28%; height: 90px" src="img/Share.jpg" alt="image" data-controltype="image">
+              </div>
+          </a>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="profile" id="page3" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+              My Profile
+          </h5>
+          <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">
+              <div class="side-by-side">
+                  <div>
+                      <span>
+                      	  <strong>One A MHVETERAN</strong><br><span>Age : 65 Yrs</span>
+                   		</span>
+                      
+                  </div>
+                  <div style="float:right; ">
+                      <img style="padding-right:2%;height: 50px; width:40%;" src="img/user-large.png"
+                      alt="Suni" style="float:right;">
+                  </div>
+              </div>
+              <p>
+              <br>
+              <br>
+              <br>
+              </p>
+          <ul data-role="listview" data-divider-theme="b" data-inset="true">
+              <li data-role="list-divider" role="heading">
+                  Personal Data
+              </li>
+              <li data-theme="e">
+                  <p><strong>Name  </strong><span>  One A MHVETERAN</span></p>
+              </li>
+              <li data-theme="c">
+              <div id="side-by-side">
+              <p><strong>Sex  </strong>Male   <strong>DOB </strong><span>03/01/1948 </span><strong>  Status </strong><span>Married</span></p>
+              </div>
+              </li>
+              <li data-theme="e">
+                  <p>123 Anywhere Road, Anywhere</p>
+              </li>
+              <li data-theme="c">
+              <p><strong>State  </strong>DC<strong>   Zip </strong><span>00001 </span></p>
+              </li>
+          </ul>
+          <a data-role="button" data-transition="none" data-theme="a" href="#page5">
+              Emergency Contacts
+          </a>
+          
+      </div>
+      <div data-theme="a" data-role="footer" data-position="fixed">
+         
+      </div>
+  </div>
+  <div data-role="page" data-control-title="profile Copy" id="page5" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+              My Profile
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">gear</a>
+      </div>
+      <div data-role="content">
+          <ul data-role="listview" data-divider-theme="b" data-inset="true">
+              <li data-role="list-divider" role="heading">
+                  Emergency Contacts
+              </li>
+              <li data-theme="c">
+                  Two MHVETERAN
+              </li>
+              <li data-theme="e">
+                  123 Anywhere Road, Anywhere
+              </li>
+              <li data-theme="c">
+                  State : DC Zip : 00001
+              </li>
+              <li data-theme="e">
+             <img src="img/letter.png" alt="France" class="ui-li-icon ui-corner-none">
+                  twomhvveteran@domain.com
+              </li>
+              <li data-theme="c">
+              <img src="img/phone.png" alt="France" class="ui-li-icon ui-corner-none">
+                  Phone No : 0000 - 090 - 0909
+              </li>
+          </ul>
+          
+      </div>
+  </div>
+  <div data-role="page" data-control-title="profile Copy" id="page6" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+              My Calendar
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">
+      <div>
+	     	    <label for="date">Check Appointments</label>
+	     	    <input type="date" name="date" id="date" value=""  />
+			</div>	
+         <ul data-role="listview" data-divider-theme="b" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                Saturday, Nov 02, 2013
+            </li>
+            <li data-theme="c">
+                <a href="" data-transition="slide">
+                    <h2>Appointment</h2>
+                    <p>11/02/2013 10:00AM - 11/02/2013 11:30 AM</p>
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="" data-transition="slide">
+                    <h2>RX Refill Date</h2>
+                    <p>11/02/2013</p>
+                </a>
+            </li>
+           
+        </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="profile Copy" id="page7" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+              Vital Statistics
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">
+      <a id="myCalendar" href="#" data-controltype="image">
+              <div style="display: inline;padding:1%;">
+                  <img style="width: 100%; height: 110px" src="img/Home_MyVitals_Veteran_001.jpg">
+              </div>
+          </a>
+          <a id="myCalendar" href="#page9" data-controltype="image">
+              <div style="display: inline;padding:1%;">
+                  <img style="width: 100%; height: 110px" src="img/Home_MyVitals_Veteran_002.jpg">
+              </div>
+          </a>
+          <a id="myCalendar" href="#" data-controltype="image">
+              <div style="display: inline;padding:1%;">
+                  <img style="width: 100%; height: 110px" src="img/Home_MyVitals_Veteran_003.jpg">
+              </div>
+          </a>
+          <a data-role="button" data-transition="none" data-theme="b" href="#page8"
+          data-icon="edit" data-iconpos="left">
+              More Tools
+          </a>
+      </div>
+  </div>
+   <div data-role="page" data-control-title="profile Copy" id="page8" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+              Tools
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">     
+       
+          <a id="myCalendar" href="#page9" data-controltype="image">
+              <div style="display: inline;padding:1%;">
+                  <img style="width: 100%; height: 410px" src="img/MyVitals_Other Screens.jpg">
+              </div>
+          </a>
+          
+      </div>
+  </div>
+     <div data-role="page" data-control-title="profile Copy" id="page9" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+              Blood Pressure
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">     
+       
+          <a id="myCalendar" href="#page10" data-controltype="image">
+              <div style="display: inline;padding:1%;">
+                  <img style="width: 305px; height: 410px" src="img/BP_Details.jpg">
+              </div>
+          </a>
+          
+      </div>
+  </div>
+  
+   <div data-role="page" data-control-title="profile Copy" id="page10" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+               My Diary
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">
+      
+       
+          <a id="myCalendar" href="#" data-controltype="image">
+              <div style="display: inline;padding:1%;">
+                  <img style="width: 100%; height: 410px" src="img/Activity_Details_small.JPG">
+              </div>
+          </a>
+          
+      </div>
+  </div>
+  
+   <div data-role="page" data-control-title="profile Copy" id="page11" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+               Rx Refill
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">
+      
+       
+          <a id="myCalendar" href="#" data-controltype="image">
+              <div style="display: inline;padding:1%;">
+                  <img style="width: 100%; height: 410px" src="img/RxRefill_HomePage.jpg">
+              </div>
+          </a>
+          
+      </div>
+  </div>
+  
+   <div data-role="page" data-control-title="profile Copy" id="page12" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+               Lab Report
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">
+      
+       
+          <a id="myCalendar" href="#" data-controltype="image">
+              <div style="display: inline;padding:1%;">
+                  <img style="width: 100%; height: 410px" src="img/Lab_Reports.jpg">
+              </div>
+          </a>
+          
+      </div>
+  </div>
+  
+  
+    <div data-role="page" data-control-title="profile Copy" id="page13" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+               Recovery Plan
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">
+      
+       
+          <a id="recovery1" href="#page14" data-controltype="image">
+              <div style="display: inline;padding-top:30%;">
+                  <img style="width: 100%; height: 410px" src="img/Recovery_1.PNG">
+              </div>
+          </a>
+          
+      </div>
+  </div>
+  
+  <div data-role="page" data-control-title="profile Copy" id="page14" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+               Recovery Plan
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">
+      
+       
+          <a id="recovery2" href="#page15" data-controltype="image">
+              <div style="display: inline;padding-top:30%;">
+                  <img style="width: 100%; height: 410px" src="img/Recovery_2.PNG">
+              </div>
+          </a>
+          
+      </div>
+  </div>
+  <div data-role="page" data-control-title="profile Copy" id="page15" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+               Recovery Plan
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">
+      
+       
+          <a id="recovery3" href="#page16" data-controltype="image">
+              <div style="display: inline;padding-top:30%;">
+                  <img style="width: 100%; height: 410px" src="img/Recovery_3.PNG">
+              </div>
+          </a>
+          
+      </div>
+  </div>
+  
+    <div data-role="page" data-control-title="profile Copy" id="page16" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+               Recovery Plan
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">
+      
+       
+          <a id="recovery4" href="#page17" data-controltype="image">
+              <div style="display: inline;padding-top:30%;">
+                  <img style="width: 100%; height: 410px" src="img/Recovery_4.PNG">
+              </div>
+          </a>
+          
+      </div>
+  </div>
+  
+  <div data-role="page" data-control-title="profile Copy" id="page17" data-theme="d">
+      <div data-theme="b" data-role="header">
+      <a href="#homePage" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Home</a>
+          <h5>
+               Recovery Plan
+          </h5>
+       <a href="#loginPage" data-icon="gear" data-iconpos="notext" data-direction="reverse" class="ui-btn-lft jqm-home">Logout</a>
+      </div>
+      <div data-role="content">      
+       
+          <a id="recovery5" href="#" data-controltype="image">
+              <div style="display: inline;padding-top:30%;">
+                  <img style="width: 100%; height: 410px" src="img/Recovery_5.PNG">
+              </div>
+          </a>
+          
+      </div>
+  </div>
+  
+  
+  
+</body>
+</html>

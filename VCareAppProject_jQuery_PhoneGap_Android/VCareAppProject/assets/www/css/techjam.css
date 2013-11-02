@@ -1,0 +1,33 @@
+.stretch-content{
+    /* Will stretch to width/height of element */
+      background-size: 100% 100%;
+    }
+    
+    .userIdInput{
+        background-color: rgba(38, 38, 38, 0.5);
+    }
+    
+    .my-button {
+        background-image: url('images/my-button.png') !important;
+    }
+    div.side-by-side { width: 100%; margin-bottom: 1em; }
+div.side-by-side > div { float: left; width: 49%; }
+    
+    
+    .ui-icon-logout
+{
+    background: url('../img/logout.png') no-repeat rgba(0, 0, 0, 0.4) !important;
+    background-size: 16px 16px;
+}
+
+.ui-icon-phone
+{
+    background: url('../img/phone.png') no-repeat rgba(0, 0, 0, 0.4) !important;
+    background-size: 24px 24px;
+} 
+
+.ui-icon-email
+{
+    background: url('../img/letter.png') no-repeat rgba(0, 0, 0, 0.4) !important;
+    background-size: 24px 24px;
+} 
